@@ -207,24 +207,73 @@ export default function DashboardView({ onBackToHome }: { onBackToHome?: () => v
               </div>
             </div>
           </>
-               ) : active === "Career Intelligence" ? (
+        ) : active === "Career Intelligence" ? (
           <CareerIntelligence />
-        ) : active === "Study Resources" ? (<StudyResources />) : (
-          <div className="sp-welcome" style={{marginTop:35}}>
-            <div>
-              <div className="sp-eyebrow">SKILLPILOT WORKSPACE</div>
-              <h1>{active}<span>.</span></h1>
-              <p><AITutor /></p>
+        ) : active === "Study Resources" ? (
+          <StudyResources />
+        ) : active === "Assessments" ? (
+          <div style={{ marginTop: 35 }}>
+            <div className="sp-eyebrow">SKILLPILOT WORKSPACE</div>
+            <h1>Assessments<span style={{ color: "#8aa94e" }}>.</span></h1>
+            <p style={{ color: "#858b7f", fontSize: 13, marginBottom: 25 }}>
+              Test your knowledge, measure your progress, and improve your skills.
+            </p>
+
+            <div className="sp-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
+              <div className="sp-card">
+                <div className="sp-stat-icon">⌘</div>
+                <h3>Java Programming</h3>
+                <p style={{ color: "#858b7f", fontSize: 12 }}>
+                  Test your Java fundamentals with multiple-choice questions.
+                </p>
+                <a href="/dashboard/assessments/java" className="sp-primary" style={{ display: "inline-block", textDecoration: "none", marginTop: 12 }}>
+                  Start Assessment →
+                </a>
+              </div>
+
+              <div className="sp-card">
+                <div className="sp-stat-icon">◇</div>
+                <h3>Data Structures & Algorithms</h3>
+                <p style={{ color: "#858b7f", fontSize: 12 }}>
+                  Challenge yourself with coding and problem-solving exercises.
+                </p>
+                <span style={{ color: "#92978d", fontSize: 11 }}>Coming soon</span>
+              </div>
+
+              <div className="sp-card">
+                <div className="sp-stat-icon">✳</div>
+                <h3>Web Development</h3>
+                <p style={{ color: "#858b7f", fontSize: 12 }}>
+                  Evaluate your HTML, CSS, JavaScript, and web development knowledge.
+                </p>
+                <a href="/dashboard/assessments/web-development" className="sp-primary" style={{ display: "inline-block", textDecoration: "none", marginTop: 12 }}>
+                  Start Assessment →
+                </a>
+              </div>
+
+              <div className="sp-card">
+                <div className="sp-stat-icon">⌘</div>
+                <h3>Problem Solving Challenge</h3>
+                <p style={{ color: "#858b7f", fontSize: 12 }}>
+                  Improve your programming logic through practical coding challenges.
+                </p>
+                <span style={{ color: "#92978d", fontSize: 11 }}>Coming soon</span>
+              </div>
             </div>
-            <button className="sp-primary" onClick={()=>setActive("Overview")}>
-              ← Back to overview
-            </button>
           </div>
-        )}
+        ) : active === "AI Tutor" ? (
+          <div style={{ marginTop: 35 }}>
+            <div className="sp-eyebrow">SKILLPILOT WORKSPACE</div>
+            <h1>AI Tutor<span style={{ color: "#8aa94e" }}>.</span></h1>
+            <p style={{ color: "#858b7f", fontSize: 13 }}>
+              Your personal learning companion, powered by Groq AI.
+            </p>
+            <AITutor />
+          </div>
+        ) : null}
       </section>
     </main>
   );
 }
-
 
 

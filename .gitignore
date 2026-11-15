@@ -13,3 +13,6 @@ out/
 dist/
 skillpilot-backup-*/
 skillpilot-ai-tutor-backup-*/
+.vercel
+
+*.backup-*.tsx
